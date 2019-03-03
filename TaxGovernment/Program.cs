@@ -38,10 +38,14 @@ namespace TaxGovernment
                 }
             }
 
+            Console.WriteLine("TAXES PAID");
+            double totalValue = 0.0;
             foreach (TaxPayer taxPayer in list)
             {
-                Console.WriteLine(taxPayer.Tax());
+                Console.WriteLine($"{taxPayer.Name}: $ {taxPayer.Tax().ToString("F2")}");
+                totalValue += taxPayer.Tax();
             }
+            Console.WriteLine($"\nTOTAL TAXES: $ {totalValue.ToString("F2")}");
         }
     }
 }
